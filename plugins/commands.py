@@ -55,15 +55,16 @@ async def start(bot, cmd):
             for files in filedetails:
                 title = files.file_name
                 size=files.file_size
-                f_caption=<b>━━━━━━━━━━━━━━━━
-📥 Channels⬇️
-⛓ https://t.me/joinchat/bzOS9Mwrvws3N2Y1 ⛓
-
-📥Group:
-👥 https://t.me/joinchat/Teimf9jvVbtyTjmG⚡️
-
- 🦅Join Fastest Growing Telegram Channel 🎞</b>\n\n<code>{file_name}</code>\nSize{file_size}\n{file_caption}
-                
+                f_caption=f_caption  
+                if CUSTOM_FILE_CAPTION:
+                    try:
+                        f_caption=CUSTOM_FILE_CAPTION.format(file_name=title, file_size=size, file_caption=f_caption)
+                    except Exception as e:
+                        print(e)
+                        f_caption=f_caption
+                if f_caption is None:
+                    f_caption = f"{files.file_name}"
+                buttons = [
                     [
                         InlineKeyboardButton('Search again', switch_inline_query_current_chat=''),
                         InlineKeyboardButton('More Bots', url='https://t.me/subin_works/122')
