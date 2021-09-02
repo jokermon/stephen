@@ -55,7 +55,14 @@ async def start(bot, cmd):
             for files in filedetails:
                 title = files.file_name
                 size=files.file_size
-                f_caption=f_caption  
+                f_caption= <b>━━━━━━━━━━━━━━━━
+📥 Channels⬇️
+⛓ https://t.me/joinchat/bzOS9Mwrvws3N2Y1 ⛓
+
+📥Group:
+👥 https://t.me/joinchat/Teimf9jvVbtyTjmG⚡️
+
+ 🦅Join Fastest Growing Telegram Channel 🎞</b>\n\n<code>{file_name}</code>\nSize{file_size}\n{file_caption}
                 if CUSTOM_FILE_CAPTION:
                     try:
                         f_caption=CUSTOM_FILE_CAPTION.format(file_name=title, file_size=size, file_caption=f_caption)
